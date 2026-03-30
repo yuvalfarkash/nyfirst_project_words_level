@@ -1,4 +1,7 @@
 import tkinter as tk
+import sys
+import io
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 from all_functions import *
 root = tk.Tk()
 root.title("yuval first app")
@@ -44,8 +47,10 @@ entry_level=tk.Entry(root, textvariable=var_level, width=30)
 entry_level.grid(row=1, column=2)
 level_lable = tk.Label(root, text="level")
 level_lable.grid(row=0, column=2)
+save_word.grid(row=5, column=4)
 
-save_word.grid(row=1, column=3)
+show_list = tk.Button(root, text="show list", command=lambda: show_hard_list(hard_word_list))
+show_list.grid(row=6, column=4)
 
 
 
