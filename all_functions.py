@@ -5,6 +5,8 @@ def save_data(easy_word_list, hard_words_list :list, var_level:str, var_word:str
                   }
     if var_level.lower()=='easy':
         easy_word_list.append(cureent_word)
-    else:
+    elif var_level.lower()=='hard':
         hard_words_list.append(cureent_word)
+    else:
+        print("invalid syntax in level, pls type again")
     print(easy_word_list)

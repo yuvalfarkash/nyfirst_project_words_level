@@ -6,17 +6,26 @@ root.title("yuval first app")
 easy_word_list=[]
 hard_word_list=[]
 
-save_word = tk.Button(root, text="Save word", command=lambda: save_data(
-    easy_word_list,
-    hard_word_list,
-    var_level.get(),
-    var_word.get(),
-    var_interpetasion.get()
-))
-
 var_word = tk.StringVar()
 var_interpetasion=tk.StringVar()
 var_level = tk.StringVar()
+
+
+def clear_after_submit():
+    save_data( easy_word_list,
+    hard_word_list,
+    var_level.get(),
+    var_word.get(),
+    var_interpetasion.get())
+    var_interpetasion.set("")
+    var_level.set("")
+    var_word.set("")
+    
+    
+    
+
+save_word = tk.Button(root, text="Save word", command=lambda: clear_after_submit())
+
 
 entry_word= tk.Entry(root, textvariable=var_word, width=30)
 entry_word.grid(row=1, column=0)
